@@ -66,7 +66,7 @@ int64_t hook(uint32_t reserved ) {
     // uint8_t last_digit = seq % 10;
 
     // Get the remainder of (seq % 2)
-    uint8_t Remainder = seq % 2;
+    uint8_t Remainder = Ledger_Index_Sequence % 2;
     TRACEVAR(Remainder);
 
     // Get first player remainder if exists
