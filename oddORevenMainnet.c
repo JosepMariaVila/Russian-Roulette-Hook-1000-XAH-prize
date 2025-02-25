@@ -71,7 +71,7 @@ int64_t hook(uint32_t reserved ) {
     TRACESTR("Remainder: ");
     TRACEVAR(remainder);
 
-    // Get first player remainder (?) if exists
+    // Get first player remainder if exists
     uint64_t p1_digit;
     state(SVAR(p1_digit), p1ledger_param, 4);
 
@@ -94,17 +94,17 @@ int64_t hook(uint32_t reserved ) {
         drops_sent = (int64_t)((double)otxn_drops);
     }
 
-    // If first player payment goes right, to check that, you need an incoming payment from another account (equal=1), it has to be a payment (tt==00), the amount has to be 1 XAH (drops_sent==1000000) and be the first player to enter to the game, no previous records of player in the namespace (state(SVAR(p1address_ns), p1address_param, 4) != 20)
-    if (equal && state(SVAR(p1address_ns), p1address_param, 4) != 20 && tt==00 && drops_sent==1000000) {
+    // If first player payment goes right, to check that, you need an incoming payment from another account (equal=1), it has to be a payment (tt==00), the amount has to be 10 XAH (drops_sent==10000000) and be the first player to enter to the game, no previous records of player in the namespace (state(SVAR(p1address_ns), p1address_param, 4) != 20)
+    if (equal && state(SVAR(p1address_ns), p1address_param, 4) != 20 && tt==00 && drops_sent==10000000) {
         state_set(SVAR(remainder), p1ledger_param, 4);
         state_set(SBUF(acc_id), p1address_param, 4);
         accept(SBUF("Odd or Even: Saving first player."), 4);
     }
-    // I check if there is a second payment from different account than first player (!players_equal), its a payment tt==00 and 1 XAH drops_sent==1000000
-    if (equal && state(SVAR(p1address_ns), p1address_param, 4) == 20 && !players_equal && tt==00 && drops_sent==1000000) {
+    // I check if there is a second payment from different account than first player (!players_equal), its a payment tt==00 and 10 XAH drops_sent==10000000
+    if (equal && state(SVAR(p1address_ns), p1address_param, 4) == 20 && !players_equal && tt==00 && drops_sent==10000000) {
         unsigned char tx01[PREPARE_PAYMENT_SIMPLE_SIZE];
 
-        // If P2 Wins, we send 2 XAH to P2
+        // If P2 Wins, we send 20 XAH to P2
         if((remainder == 0) && (p1_digit != 0)){
             PREPARE_PAYMENT_SIMPLE(tx01, drops_sent*2, acc_id, 0, 0);
             uint8_t emithash01[32];
@@ -115,7 +115,7 @@ int64_t hook(uint32_t reserved ) {
             uint8_t emithash01[32];
             int64_t emit_result01 = emit(SBUF(emithash01), SBUF(tx01));
         }
-        // If P1 Wins we send 2 XAH to P1
+        // If P1 Wins we send 20 XAH to P1
         if((remainder == 0) && (p1_digit == 0)){
             PREPARE_PAYMENT_SIMPLE(tx01, drops_sent*2, p1address_ns, 0, 0);
             uint8_t emithash01[32];
