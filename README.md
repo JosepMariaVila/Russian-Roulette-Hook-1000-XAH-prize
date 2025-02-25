@@ -1,6 +1,6 @@
 ![OddsOrEvens20XAH](https://github.com/user-attachments/assets/1ad8df67-4911-42ad-b342-82c7089c6bd6)
 
-# Odds or Evens, a game Hook 
+# Odds or Evens, a game Hook on the Xahau MAINNET 
 
 ## Introduction
 
