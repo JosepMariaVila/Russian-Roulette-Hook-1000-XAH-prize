@@ -26,36 +26,36 @@ Compare the remainders of both players regarding being odd or even, if they are 
 
 ## Explanation
 
-**Attention:** Only use if you are sure of what you are doing on Testnet/Mainnet. You could put your funds at risk. It is recommended to install on new accounts.
+**Attention:** Only use if you are sure of what you are doing on Mainnet. You could put your funds at risk. It is recommended to install on new accounts.
 
-The hook when installed allows you to play the game of the odds or evens numbers. The hook will accept two players sending 1 XAH. With each payment the hook will check the ledger index sequence. The hook will check if it's an odd or even number and store the remainder of the division in the namespace next to the address of the first player referring to the first payment he receives. When a second player sends a payment of 1 XAH to the hook address, the hook will check the ledger index sequence and compare the remainder with that of the first player. This can lead to 2 possible outcomes. Both have the same remainder or a different one. If both have the same remainder, Player 1 wins and receives 2 XAH. If both players have a different remainder, Player 2 wins and receives 2 XAH. 
+The hook when installed allows you to play the game of the odds or evens numbers. The hook will accept two players sending 10 XAH. With each payment the hook will check the ledger index sequence. The hook will check if it's an odd or even number and store the remainder of the division in the namespace next to the address of the first player referring to the first payment he receives. When a second player sends a payment of 10 XAH to the hook address, the hook will check the ledger index sequence and compare the remainder with that of the first player. This can lead to 2 possible outcomes. Both have the same remainder or a different one. If both have the same remainder, Player 1 wins and receives 20 XAH. If both players have a different remainder, Player 2 wins and receives 20 XAH. 
 
-The hook blocks any payment other than 1 XAH. So a third case could occur, that the hook account runs out of funds and the game cannot be managed. If there are insufficient funds it might not be possible to send the “prize” to the winners. Therefore, it has been enabled to manage an account known as funding “FUND” that the hook allows to operate payments in both directions to be able to take out or put in XAH and avoid the mentioned problem. To assign a “FUND” account it is necessary to create an Invoke transaction from the Hook account with the parameter “FUND” and the account that we want to assign as a “FUND” account in the parameter value. The process is explained below.
+The hook blocks any payment other than 10 XAH. So a third case could occur, that the hook account runs out of funds and the game cannot be managed. If there are insufficient funds it might not be possible to send the “prize” to the winners. Therefore, it has been enabled to manage an account known as funding “FUND” that the hook allows to operate payments in both directions to be able to take out or put in XAH and avoid the mentioned problem. To assign a “FUND” account it is necessary to create an Invoke transaction from the Hook account with the parameter “FUND” and the account that we want to assign as a “FUND” account in the parameter value. The process is explained below.
 
 
 ## Installation & Usage
 
 Once the hook is installed, the following triggers are expected for the hook.
 
-- An account will send a payment of 1 XAH to the hook account. The payment account will be known as Player 1. The hook will register in the namespace the address of Player one with the key P1AD and store the odd or even number of the ledger sequence in the namespace under the key P1LG.
+- An account will send a payment of 10 XAH to the hook account. The payment account will be known as Player 1. The hook will register in the namespace the address of Player one with the key P1AD and store the odd or even number of the ledger sequence in the namespace under the key P1LG.
 
-- A second account (different from the first one) will send a payment of 1 XAH to the hook account. The payment account will be known as Player 2. The hook will compare the oddeness or eveness of the ledger index sequence number with that of Player 1 and decide the final result of the game.
+- A second account (different from the first one) will send a payment of 10 XAH to the hook account. The payment account will be known as Player 2. The hook will compare the oddeness or eveness of the ledger index sequence number with that of Player 1 and decide the final result of the game.
 
 - An Invoke transaction from the hook account with the hook parameter “FUND” and the desired address as value in HEX format. This will store in the namespace the information with the key “FUND” and with value the address in HEX.
 
 
-## How to install the Odds or Evens Hook on Testnet?
+## How to install the Odds or Evens Hook on Mainnet?
 
-HookHash: 89E9C5B8F04BD9C23AA0299573B0EBC43091AEBB5AFC90D4A353020A00CEFDE7
+HookHash: 
 
 1. You can do it by [XRPLWin Hook Install Tool](https://xahau-testnet.xrplwin.com/tools/hook/from-hash)
    
 
 ## I want to try them without installing anything
 
-You can try this hook just sending 1 XAH to the following account on TESTNET and wait until somebody else sends 1 XAH to it and see who wins (or you can just create a second account on testnet and send yourself 1 XAH from this different account and see who wins):
+You can try this hook by sending 10 XAH to the following account on MAINNET and wait until somebody else sends 10 XAH to it and see who wins:
 
-- Testnet hook account:   r9uM7PHEYvMqBQsuFzAany9xucXfrQsLDr
+- Mainnet hook account:   
 
 
 ## Credits
