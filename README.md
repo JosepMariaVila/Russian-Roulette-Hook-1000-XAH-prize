@@ -48,7 +48,7 @@ Once the hook is installed, the following triggers are expected for the hook.
 
 HookHash: 621F33F006A0453019975BF7C9B78052B2C76EE2624D162784880C0DE0828FDE
 
-1. You can do it by https://xahau.xrplwin.com/tools/hook/from-hash
+1. You can do it using this tool:  https://xahau.xrplwin.com/tools/hook/from-hash
    
 
 ## I want to try them without installing anything
