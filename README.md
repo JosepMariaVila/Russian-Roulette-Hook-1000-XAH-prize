@@ -46,7 +46,7 @@ Once the hook is installed, the following triggers are expected for the hook.
 
 ## How to install the Odds or Evens Hook on Mainnet?
 
-HookHash: 
+HookHash: 621F33F006A0453019975BF7C9B78052B2C76EE2624D162784880C0DE0828FDE
 
 1. You can do it by [XRPLWin Hook Install Tool](https://xahau-testnet.xrplwin.com/tools/hook/from-hash)
    
@@ -55,7 +55,7 @@ HookHash:
 
 You can try this hook by sending 10 XAH to the following account on MAINNET and wait until somebody else sends 10 XAH to it and see who wins:
 
-- Mainnet hook account:   
+- Mainnet hook account:  rGgg27dQggoGGia34HsvgJfaEUkK6heBvq 
 
 
 ## Credits
