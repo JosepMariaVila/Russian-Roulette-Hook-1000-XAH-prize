@@ -8,7 +8,7 @@ Russian Roulette is a hook programmed in C for the Xahau blockchain. A hook is a
 
 Russian Roulette is a Hook that converts a Xahau account in an engine for a simple game. One player will hava an odd or an even number based on the ledger index sequence of the payment he sent. Next player will have an odd or an even number based on the ledger index sequence ledger of the payment he sent. 
 
-This hook is based in the Odds or Evens Hook and the Highest Number Hook by @ekiserrepe. The result of dividing the ledger index sequence by 2 is 0 for even numbers or 1 for odd numbers, based on that the Hook determines the winner as follows.
+This hook is based on my Odds or Evens Hook and the Highest Number Hook by @ekiserrepe. The result of dividing the ledger index sequence by 2 is 0 for even numbers or 1 for odd numbers, based on that the Hook determines the winner as follows.
 
 Who wins?
 
