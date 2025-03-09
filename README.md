@@ -1,14 +1,14 @@
-![OddsOrEvens20XAH](https://github.com/user-attachments/assets/1ad8df67-4911-42ad-b342-82c7089c6bd6)
+![russian roulette](https://github.com/user-attachments/assets/ccff29b1-7bf6-42a7-bc6a-773fb3030fa1)
 
-# Odds or Evens, a game Hook on the Xahau Mainnet
+# Russian Roulette, a game Hook on the Xahau network
 
 ## Introduction
 
-Odds or Evens is a hook programmed in C for the Xahau blockchain. A hook is a series of rules that enable smart logic in Xahau, considered the smart contracts of Xahau. 
+Russian Roulette is a hook programmed in C for the Xahau blockchain. A hook is a series of rules that enable smart logic in Xahau, considered the smart contracts of Xahau. 
 
-Odds or Evens is a Hook that converts a Xahau account in an engine for a simple game. One player will hava an Odd or and Even number based on the ledger index sequence of the payment he sent. Next player will have an Odd or an Even number based on the ledger index sequence ledger of the payment he sent. 
+Russian Roulette is a Hook that converts a Xahau account in an engine for a simple game. One player will hava an odd or an even number based on the ledger index sequence of the payment he sent. Next player will have an odd or an even number based on the ledger index sequence ledger of the payment he sent. 
 
-This hook is based in the Highest Number Hook by @ekiserrepe. That hook had an undesirable thing, the range between numbers where in some cases predictable, for example, if first player had a 0 or 1, then there were high chances the second player was able to win because, 2, 3, 4, 5, 6, 7, 8 and 9 would win him. So I thought this should be reduced to a range of 2 options, this way the result would be less predictable. A way to do so is reduce the ledger sequence number to an odd or even number or to its corresponding remainders when they are divided by 2. The result of dividing the ledger index sequence by 2 is 0 for even numbers, or 1 for odd numbers.
+This hook is based in the Odds or Evens Hook and the Highest Number Hook by @ekiserrepe. That hook had an undesirable thing, the range between numbers where in some cases predictable, for example, if first player had a 0 or 1, then there were high chances the second player was able to win because, 2, 3, 4, 5, 6, 7, 8 and 9 would win him. So I thought this should be reduced to a range of 2 options, this way the result would be less predictable. A way to do so is reduce the ledger sequence number to an odd or even number or to its corresponding remainders when they are divided by 2. The result of dividing the ledger index sequence by 2 is 0 for even numbers, or 1 for odd numbers.
 
 But who wins?
 
@@ -28,34 +28,34 @@ Compare the remainders of both players regarding being odd or even, if they are 
 
 **Attention:** Only use if you are sure of what you are doing on Mainnet. You could put your funds at risk. It is recommended to install on new accounts.
 
-The hook when installed allows you to play the game of the odds or evens numbers. The hook will accept two players sending 10 XAH. With each payment the hook will check the ledger index sequence. The hook will check if it's an odd or even number and store the remainder of the division in the namespace next to the address of the first player referring to the first payment he receives. When a second player sends a payment of 10 XAH to the hook address, the hook will check the ledger index sequence and compare the remainder with that of the first player. This can lead to 2 possible outcomes. Both have the same remainder or a different one. If both have the same remainder, Player 1 wins and receives 20 XAH. If both players have a different remainder, Player 2 wins and receives 20 XAH. 
+The hook when installed allows you to play the game of the odds or evens numbers. The hook will accept two players sending 10 XAH. With each payment the hook will check the ledger index sequence. The hook will check if it's an odd or even number and store the remainder of the division in the namespace next to the address of the first player referring to the first payment he receives. When a second player sends a payment of 500 XAH to the hook address, the hook will check the ledger index sequence and compare the remainder with that of the first player. This can lead to 2 possible outcomes. Both have the same remainder or a different one. If both have the same remainder, Player 1 wins and receives 1000 XAH. If both players have a different remainder, Player 2 wins and receives 1000 XAH. 
 
-The hook blocks any payment other than 10 XAH. So a third case could occur, that the hook account runs out of funds and the game cannot be managed. If there are insufficient funds it might not be possible to send the “prize” to the winners. Therefore, it has been enabled to manage an account known as funding “FUND” that the hook allows to operate payments in both directions to be able to take out or put in XAH and avoid the mentioned problem. To assign a “FUND” account it is necessary to create an Invoke transaction from the Hook account with the parameter “FUND” and the account that we want to assign as a “FUND” account in the parameter value. The process is explained below.
+The hook blocks any payment other than 500 XAH. So a third case could occur, that the hook account runs out of funds and the game cannot be managed. If there are insufficient funds it might not be possible to send the “prize” to the winners. Therefore, it has been enabled to manage an account known as funding “FUND” that the hook allows to operate payments in both directions to be able to take out or put in XAH and avoid the mentioned problem. To assign a “FUND” account it is necessary to create an Invoke transaction from the Hook account with the parameter “FUND” and the account that we want to assign as a “FUND” account in the parameter value. The process is explained below.
 
 
 ## Installation & Usage
 
 Once the hook is installed, the following triggers are expected for the hook.
 
-- An account will send a payment of 10 XAH to the hook account. The payment account will be known as Player 1. The hook will register in the namespace the address of Player one with the key P1AD and store the odd or even number of the ledger sequence in the namespace under the key P1LG.
+- An account will send a payment of 500 XAH to the hook account. The payment account will be known as Player 1. The hook will register in the namespace the address of Player one with the key P1AD and store the odd or even number of the ledger sequence in the namespace under the key P1LG.
 
-- A second account (different from the first one) will send a payment of 10 XAH to the hook account. The payment account will be known as Player 2. The hook will compare the oddeness or eveness of the ledger index sequence number with that of Player 1 and decide the final result of the game.
+- A second account (different from the first one) will send a payment of 500 XAH to the hook account. The payment account will be known as Player 2. The hook will compare the oddeness or eveness of the ledger index sequence number with that of Player 1 and decide the final result of the game.
 
 - An Invoke transaction from the hook account with the hook parameter “FUND” and the desired address as value in HEX format. This will store in the namespace the information with the key “FUND” and with value the address in HEX.
 
 
-## How to install the Odds or Evens Hook on Mainnet?
+## How to install the Russian Roulette on Mainnet?
 
-HookHash: 621F33F006A0453019975BF7C9B78052B2C76EE2624D162784880C0DE0828FDE
+Mainnet HookHash: ...
 
 1. You can do it using this tool:  https://xahau.xrplwin.com/tools/hook/from-hash
    
 
 ## I want to try them without installing anything
 
-You can try this hook by sending 10 XAH to the following account on MAINNET and wait until somebody else sends 10 XAH to it and see who wins:
+You can try this hook by sending 500 XAH to the following account on MAINNET and wait until somebody else sends 500 XAH to it and see who wins:
 
-- Mainnet hook account:  rGgg27dQggoGGia34HsvgJfaEUkK6heBvq 
+- Mainnet Hook account:  ... 
 
 
 ## Credits
