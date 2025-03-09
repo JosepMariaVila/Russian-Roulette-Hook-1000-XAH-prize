@@ -44,20 +44,20 @@ Once the hook is installed, the following triggers are expected for the hook.
 - An Invoke transaction from the hook account with the hook parameter “FUND” and the desired address as value in HEX format. This will store in the namespace the information with the key “FUND” and with value the address in HEX.
 
 
-## How to install the Russian Roulette on Mainnet?
+## How to install the Russian Roulette on Testnet or Mainnet?
+
+Testnet HookHash: FC9F1E87F26493C57E376B35D2AF4C9E7764479D268C86B3FF944D4D711C2AB3
 
 Mainnet HookHash: ...
 
-1. You can do it using this tool:  https://xahau.xrplwin.com/tools/hook/from-hash
+You can do it using this tool:  https://xahau.xrplwin.com/tools/hook/from-hash
    
 
 ## I want to try them without installing anything
 
-You can try this hook by sending 500 XAH to the following account on MAINNET and wait until somebody else sends 500 XAH to it and see who wins:
+You can try this hook by sending 500 XAH to the following account on Testnet or Mainnet and wait until somebody else sends 500 XAH to it and see who wins:
 
-- Mainnet Hook account:  ... 
+- Testnet Hook account: https://xahau-testnet.xrplwin.com/account/rNDHjKnY1qGNvSf9GUR1vVRrFKS8pNxKDz
+  
+- Mainnet Hook account: 
 
-
-## Credits
-
-This hook was originally created by @ekiserrepe. You can find more of his projects on ekiserrepe.com
