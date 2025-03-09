@@ -48,16 +48,16 @@ Once the hook is installed, the following triggers are expected for the hook.
 
 Testnet HookHash: FC9F1E87F26493C57E376B35D2AF4C9E7764479D268C86B3FF944D4D711C2AB3
 
-Mainnet HookHash: ...
+Mainnet HookHash: FC9F1E87F26493C57E376B35D2AF4C9E7764479D268C86B3FF944D4D711C2AB3
 
 You can do it using this tool:  https://xahau.xrplwin.com/tools/hook/from-hash
    
 
 ## I want to try them without installing anything
 
-You can try this hook by sending 500 XAH to the following account on Testnet or Mainnet and wait until somebody else sends 500 XAH to it and see who wins:
+You can try this hook by sending 500 XAH to the following account on Testnet or Mainnet (Be careful when sending real funds to Mainnet account) and wait until somebody else sends 500 XAH to it and see who wins:
 
 - Testnet Hook account: https://xahau-testnet.xrplwin.com/account/rNDHjKnY1qGNvSf9GUR1vVRrFKS8pNxKDz
   
-- Mainnet Hook account: 
+- Mainnet Hook account: https://xahau.xrplwin.com/account/rBdZBzzgwKxUm8YdyjeJTC5QDCouz4ZPG
 
