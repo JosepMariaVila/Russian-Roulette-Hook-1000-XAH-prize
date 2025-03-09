@@ -2,8 +2,8 @@
 
 int64_t hook(uint32_t reserved ) {
 
-    // Create a reserve for 2 outgoing transactions
-    etxn_reserve(2);
+    // Create a reserve for 1 outgoing transactions
+    etxn_reserve(1);
 
     // Check hook account
     unsigned char hook_accid[20];
@@ -76,15 +76,15 @@ int64_t hook(uint32_t reserved ) {
     // If i want to add the funding account
     if (!equal && otxn_param(fundaddress_hp, 20, SBUF(fund_param))==20 && tt==99) {
         state_set(SBUF(fundaddress_hp), fund_param, 4);
-        accept(SBUF("Odd or Even: Adding fund account."), 1);
+        accept(SBUF("Russian Roulette: Adding fund account."), 1);
     }
     // I want to allow the fund account send payments and receiving from hook account
     if (tt==00 && (sender_equal || destination_equal)) {
-        accept(SBUF("Odd or Even: Funding account payment."), 2);
+        accept(SBUF("Russian Roulette: Funding account payment."), 2);
     }
     // If It's not XAH (other tokens). or a transaction without amount
     if (amount_len != 8){
-        rollback(SBUF("Odd or Even: Not accepting IOUs or transaction type."), 3);
+        rollback(SBUF("Russian Roulette: Not accepting IOUs or transaction type."), 3);
         }
     else // If it's XAH
     {
@@ -92,17 +92,17 @@ int64_t hook(uint32_t reserved ) {
         drops_sent = (int64_t)((double)otxn_drops);
     }
 
-    // If first player payment goes right, to check that, you need an incoming payment from another account (equal=1), it has to be a payment (tt==00), the amount has to be 10 XAH (drops_sent==10000000) and be the first player to enter to the game, no previous records of player in the namespace (state(SVAR(p1address_ns), p1address_param, 4) != 20)
-    if (equal && state(SVAR(p1address_ns), p1address_param, 4) != 20 && tt==00 && drops_sent==10000000) {
+    // If first player payment goes right, to check that, you need an incoming payment from another account (equal=1), it has to be a payment (tt==00), the amount has to be 500 XAH (drops_sent==500000000) and be the first player to enter to the game, no previous records of player in the namespace (state(SVAR(p1address_ns), p1address_param, 4) != 20)
+    if (equal && state(SVAR(p1address_ns), p1address_param, 4) != 20 && tt==00 && drops_sent==500000000) {
         state_set(SVAR(Remainder), p1ledger_param, 4);
         state_set(SBUF(acc_id), p1address_param, 4);
-        accept(SBUF("Odd or Even: Saving first player."), 4);
+        accept(SBUF("Russian Roulette: Saving first player."), 4);
     }
-    // I check if there is a second payment from different account than first player (!players_equal), its a payment tt==00 and 10 XAH drops_sent==10000000
-    if (equal && state(SVAR(p1address_ns), p1address_param, 4) == 20 && !players_equal && tt==00 && drops_sent==10000000) {
+    // I check if there is a second payment from different account than first player (!players_equal), its a payment tt==00 and 10 XAH drops_sent==500000000
+    if (equal && state(SVAR(p1address_ns), p1address_param, 4) == 20 && !players_equal && tt==00 && drops_sent==500000000) {
         unsigned char tx01[PREPARE_PAYMENT_SIMPLE_SIZE];
 
-        // If P2 Wins, we send 20 XAH to P2
+        // If P2 Wins, we send 1000 XAH to P2
         if((Remainder == 0) && (p1_digit != 0)){
             PREPARE_PAYMENT_SIMPLE(tx01, drops_sent*2, acc_id, 0, 0);
             uint8_t emithash01[32];
@@ -113,7 +113,7 @@ int64_t hook(uint32_t reserved ) {
             uint8_t emithash01[32];
             int64_t emit_result01 = emit(SBUF(emithash01), SBUF(tx01));
         }
-        // If P1 Wins we send 20 XAH to P1
+        // If P1 Wins we send 1000 XAH to P1
         if((Remainder == 0) && (p1_digit == 0)){
             PREPARE_PAYMENT_SIMPLE(tx01, drops_sent*2, p1address_ns, 0, 0);
             uint8_t emithash01[32];
@@ -128,10 +128,10 @@ int64_t hook(uint32_t reserved ) {
         // Deleting P1 values from namespace
         state_set(0,0, p1ledger_param, 4);
         state_set(0,0, p1address_param, 4);
-        accept(SBUF("Odd or Even: We have a winner, end of the game!"), 3);
+        accept(SBUF("Russian Roulette: We have a winner, end of the game!"), 5);
     }
 
-    rollback(SBUF("Odd or Even: Not accepting this transaction."), 5);
+    rollback(SBUF("Russian Roulette: Not accepting this transaction."), 6);
     _g(1,1);   // every hook needs to import guard function and use it at least once
     // unreachable
     return 0;
