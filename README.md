@@ -26,7 +26,7 @@ Compare the remainders of both players regarding being odd or even, if they are 
 
 ## Explanation
 
-**Attention:** Only use if you are sure of what you are doing on Mainnet. You could put your funds at risk. It is recommended to install on new accounts.
+**DISCLAIMER:** Only use if you are sure of what you are doing on Mainnet. You could put your funds at risk. It is recommended to install on new accounts.
 
 The hook when installed allows you to play a Russian Roulette game. The hook will accept two players sending 500 XAH. With each payment the hook will check the ledger index sequence. The hook will check if it's an odd or even number and store the remainder of the division in the namespace next to the address of the first player referring to the first payment he receives. When a second player sends a payment of 500 XAH to the hook address, the hook will check the ledger index sequence and compare the remainder with that of the first player. This can lead to 2 possible outcomes. Both have the same remainder or a different one. If both have the same remainder, Player 1 wins and receives 1000 XAH. If both players have a different remainder, Player 2 wins and receives 1000 XAH. 
 
