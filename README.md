@@ -46,9 +46,9 @@ Once the hook is installed, the following triggers are expected for the hook.
 
 ## How to install the Russian Roulette on Testnet or Mainnet?
 
-Testnet HookHash: FC9F1E87F26493C57E376B35D2AF4C9E7764479D268C86B3FF944D4D711C2AB3
+- Testnet HookHash: FC9F1E87F26493C57E376B35D2AF4C9E7764479D268C86B3FF944D4D711C2AB3
 
-Mainnet HookHash: FC9F1E87F26493C57E376B35D2AF4C9E7764479D268C86B3FF944D4D711C2AB3
+- Mainnet HookHash: FC9F1E87F26493C57E376B35D2AF4C9E7764479D268C86B3FF944D4D711C2AB3
 
 You can do it using this tool:  https://xahau.xrplwin.com/tools/hook/from-hash
    
